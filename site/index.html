@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intents Thesis — NEAR as a settlement layer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a class="lg" href="#top">Intents/26</a>
+    <a class="rd" href="#claim">Read the thesis ↓</a>
+    <span></span>
+    <nav>
+      <a href="#method">Method</a>
+      <a href="#data">Data</a>
+    </nav>
+  </header>
+
+  <div class="blocks" id="top" aria-hidden="true">
+    <div style="background:#cdabfe"><span class="lab">USER</span></div>
+    <div></div>
+    <div style="background:#fe7141"><span class="lab">INTENT</span></div>
+    <div style="background:#000"></div>
+    <div><span class="lab">SOLVER</span></div>
+    <div style="background:#cdabfe"></div>
+    <div style="background:#e9e6df"><span class="lab">SETTLEMENT</span></div>
+    <div style="background:#fe7141"></div>
+  </div>
+
+  <div class="titlerow">
+    <p>Is NEAR becoming a cross-chain settlement layer via NEAR Intents? A three-hour sample of unauthenticated dry quotes, set against public Kraken mids.</p>
+    <h1>Say what you want, not how to get it.</h1>
+  </div>
+  <div class="metarow">
+    <span>Thesis track · NEAR Hackathon</span>
+    <span id="window-meta">Sample window loads from the raw files.</span>
+  </div>
+
+  <section class="sec" id="claim">
+    <div>
+      <span class="lab">01 · The claim</span>
+      <div class="toc">
+        <a href="#claim">01 The claim <em>p.1</em></a>
+        <a href="#method">02 Method <em>p.2</em></a>
+        <a href="#evidence">03 Evidence <em>p.3</em></a>
+        <a href="#limits">04 Limits <em>p.4</em></a>
+      </div>
+    </div>
+    <div>
+      <h2>The quote layer answered. The public volume series did not expand.</h2>
+      <p>An intent is the outcome, not the route. NEAR Intents asks a market of solvers to find a way from the asset you hold to the asset you want, including across chains. That is a settlement claim only if the quotes exist and the price is close to a market a person can already see.</p>
+      <p>Three hours of <code>dry: true</code> 1Click quotes cannot show that NEAR is <em>becoming</em> that layer. They can show whether, in this window, the quote was usually there, and whether the token amount sat near a Kraken cross-mid. A third, descriptive check asks whether DefiLlama’s published daily volume is expanding. The pre-registered bars are in <a href="PREREGISTRATION.md">PREREGISTRATION.md</a>.</p>
+      <div class="nums" id="nums">
+        <div class="stat" style="background:#cdabfe"><b id="n-success">—</b><span>Quotes returned<small id="n-success-note">standard dry quotes</small></span></div>
+        <div class="stat" style="background:#f1f1f1"><b id="n-gap">—</b><span>Volatile gap vs Kraken<small id="n-gap-note">basis points, all-in</small></span></div>
+        <div class="stat" style="background:#fe7141"><b id="n-vol">—</b><span>DefiLlama 30-day change<small>versus the prior 30 days</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="method">
+    <div><span class="lab">02 · Method</span></div>
+    <div>
+      <h2>Dry quotes, a fixed basket, and a Kraken mid from the same cycle.</h2>
+      <p>Each cycle posts to <code>https://1click.chaindefuser.com/v0/quote</code> with <code>dry</code> hard-coded true and no API key. The published fee schedule says an unauthenticated quote carries an extra 25 basis points. That fee stays inside the measured gap. Adding 25 basis points back is labeled an estimate and is not the test.</p>
+      <p>Ten routes, two sizes: NEAR and USDC both ways, USDC from Ethereum to Solana and to Base, USDT from Ethereum to Tron, ETH to SOL, BTC to ETH, SOL to NEAR, ETH from Arbitrum to Ethereum, and NEAR to SOL. That is seven chains: NEAR, Ethereum, Solana, Bitcoin, Tron, Base, and Arbitrum. Stable and same-asset routes are one family. One extra 10 wNEAR quote waits 2,000 milliseconds and is left out of the rates and the medians.</p>
+      <p>The price is whole tokens from the integer amounts. Kraken’s mid is the average of the best bid and the best ask. The cross is the origin mid divided by the destination mid. OKX and Coinbase are stored and shown. They do not decide the pass. Binance’s book ticker returned HTTP 451 from this host and is not a reference.</p>
+      <p>A cycle counts when all 20 standard quotes were attempted. Public volume is DefiLlama’s daily chart and, separately, the volume block on the Intents explorer homepage. The explorer API itself answers <code>MISSING_TOKEN</code> without a JWT and is not used for totals. The two series are never averaged.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="evidence">
+    <div>
+      <span class="lab">03 · Evidence</span>
+      <p class="prose">Every figure is drawn from <code>data/verdict.json</code> and <code>data/series.json</code>, which <code>analysis/rebuild.py</code> writes from <code>data/raw</code>. Hover a chart. The route row under figure 3 switches the series.</p>
+    </div>
+    <div>
+      <h2>Availability held, except for one rough quarter-hour.</h2>
+      <div class="fig">
+        <div class="top"><span>Fig. 1 · Share of 20 standard quotes that returned an amount</span><span>1Click dry · no API key</span></div>
+        <div id="c-avail" class="chart short"></div>
+      </div>
+      <p>A miss is a timeout at 50 seconds, a Cloudflare 520, or a truncated body. Those eight rows stay in the raw file. They are not dropped from the rate.</p>
+
+      <div class="fig">
+        <div class="top"><span>Fig. 2 · Median gap versus the Kraken cross-mid</span><span>negative = less output than the mid</span></div>
+        <div class="bars" id="gap-bars"></div>
+        <p class="note" id="gap-note"></p>
+      </div>
+
+      <div class="fig">
+        <div class="top"><span>Fig. 3 · The same gap, one route at a time</span><span id="route-caption">pick a route</span></div>
+        <div class="controls" id="route-controls"></div>
+        <div id="c-route" class="chart"></div>
+      </div>
+
+      <div class="fig">
+        <div class="top"><span>Fig. 4 · Two sizes, one route · wNEAR to USDC on Ethereum</span><span>Kraken gap, basis points</span></div>
+        <div class="bars" id="size-bars"></div>
+        <p class="note">The route median in the table sits between these two sizes. It is not the price of either size. The official volatile test pools both with the other volatile routes.</p>
+      </div>
+
+      <div class="fig">
+        <div class="top"><span>Fig. 5 · DefiLlama daily NEAR Intents volume</span><span>their series, not a sum of these quotes</span></div>
+        <div id="c-llama" class="chart"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="data">
+    <div>
+      <span class="lab">Data</span>
+      <p class="prose">Raw rows live in <code>data/raw</code>. The dataset manifest is anchored on NEAR testnet. The anchor shows the bytes were not edited later. It does not make a quote true.</p>
+    </div>
+    <div>
+      <h2>Ten routes, two references, one official test.</h2>
+      <div class="fig">
+        <div class="top"><span>Median gap by route</span><span id="hash-line">hash loads with the verdict</span></div>
+        <div class="scroll">
+          <table id="routes">
+            <thead>
+              <tr>
+                <th>Route</th><th>Family</th>
+                <th class="n">Quotes</th><th class="n">Kraken</th>
+                <th class="n">OKX</th><th class="n">1Click USD</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <p id="anchor-copy"></p>
+    </div>
+  </section>
+
+  <section class="sec" id="limits">
+    <div><span class="lab">04 · Limits</span></div>
+    <div>
+      <h2>What would falsify this, and what the sample cannot reach.</h2>
+      <p>Availability is falsified below 50 percent, or if fewer than five routes ever quote. It passes only at or above 85 percent, with at least eight of the ten routes at or above 70 percent. The price statement passes only if the stable median is at least −40 basis points and the volatile median at least −100. It is falsified past −100 and −200. Between those bars the result is “not supported.”</p>
+      <p>A dry quote is not a settled transfer. Comparing with a mid makes Intents look worse than a price you could lift on a central book, and this study does not add central-book fees either. The gap is mid against mid. 1Click’s own dollar marks sometimes disagree with the token amounts, which is why they are not the official test. Same-asset routes are closer to a bridge quote than to price discovery.</p>
+      <p>DefiLlama’s 24-hour total and the explorer homepage have matched at some fetches. The 7-day, 30-day, and all-time figures have not, and DefiLlama’s <code>total30d</code> headline is not the sum of the last 30 daily bars. <code>growth_30</code> uses the bars. The newest bar in the snapshot is dated before the sample day. Rising volume would still not prove the strong claim. Contracting volume, which is the label this window gets, does not by itself erase a working quote.</p>
+      <p>The clock span is one host and one network path. Quotes move; re-running the collector will not reproduce these rows. Re-running <code>python3 analysis/rebuild.py</code> will reproduce the figures from the committed rows. No swap was submitted.</p>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <span>Intents Thesis · dry quotes only · testnet anchor</span>
+    <span id="generated"></span>
+  </footer>
+  <script src="vendor/echarts.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

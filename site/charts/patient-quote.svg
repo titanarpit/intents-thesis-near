@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-label="Patient quote versus fastest quote, 10 wNEAR to USDC">
+<rect width="760" height="380" fill="#f3efe7"/>
+<text x="24" y="28" font-family="Georgia, serif" font-size="18" fill="#1c1916">Patient quote versus fastest quote, 10 wNEAR to USDC</text>
+<line x1="64" y1="332.0" x2="742" y2="332.0" stroke="#e4ddd2"/>
+<text x="56" y="336.0" text-anchor="end" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">-40.5</text>
+<line x1="64" y1="236.7" x2="742" y2="236.7" stroke="#e4ddd2"/>
+<text x="56" y="240.7" text-anchor="end" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">-9.6</text>
+<line x1="64" y1="141.3" x2="742" y2="141.3" stroke="#e4ddd2"/>
+<text x="56" y="145.3" text-anchor="end" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">+21.2</text>
+<line x1="64" y1="46.0" x2="742" y2="46.0" stroke="#e4ddd2"/>
+<text x="56" y="50.0" text-anchor="end" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">+52.0</text>
+<text x="16" y="58" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c" transform="rotate(-90 16 58)">bps, patient minus fast</text>
+<text x="64.0" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">03:17</text>
+<text x="175.1" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">03:47</text>
+<text x="286.3" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">04:17</text>
+<text x="397.4" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">04:47</text>
+<text x="508.6" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">05:26</text>
+<text x="619.7" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">05:57</text>
+<text x="730.9" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">06:27</text>
+<path d="M64.0,195.6 L75.1,174.8 L86.2,220.3 L97.3,204.1 L108.5,221.0 L119.6,166.0 L130.7,149.9 L141.8,224.7 L152.9,197.2 L164.0,219.2 L175.1,244.2 L186.3,182.4 L197.4,188.5 L208.5,215.6 L219.6,272.8 L230.7,197.4 L241.8,150.8 L253.0,219.3 L264.1,204.1 L275.2,195.9 L286.3,218.6 L297.4,249.3 L308.5,205.7 L319.6,206.3 L330.8,194.3 L341.9,209.5 L353.0,183.8 L364.1,200.2 L375.2,147.4 L386.3,186.2 L397.4,228.3 L408.6,169.7 L419.7,182.0 L430.8,221.0 L441.9,312.3 L453.0,242.2 L464.1,65.7 L475.2,91.9 L486.4,265.4 L497.5,223.8 L508.6,186.2 L519.7,140.0 L530.8,269.1 L541.9,216.6 L553.0,300.2 L564.2,164.4 L575.3,122.8 L586.4,216.1 L597.5,178.9 L608.6,212.8 L619.7,181.1 L630.9,148.9 L642.0,243.0 L653.1,186.9 L664.2,226.2 L675.3,185.1 L686.4,224.5 L697.5,173.3 L708.7,177.8 L719.8,204.7 L730.9,193.5 L742.0,220.3" fill="none" stroke="#8a6232" stroke-width="2"/>
+<rect x="64" y="340" width="10" height="10" fill="#8a6232"/>
+<text x="78" y="349" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#1c1916">2000 ms wait versus 0 ms</text>
+</svg>

@@ -1,0 +1,345 @@
+{
+  "generated_at": "2026-11-14T06:45:10Z",
+  "question": "Is NEAR becoming a cross-chain settlement layer via NEAR Intents?",
+  "window": {
+    "first": "2026-11-14T03:17:56.623826Z",
+    "last": "2026-11-14T06:30:24.587825Z",
+    "complete_cycles": 62,
+    "incomplete_cycles": 0,
+    "incomplete_cycle_ids": [],
+    "attempts": 1240,
+    "successes": 1232,
+    "overall_success_rate": "0.993548"
+  },
+  "tests": {
+    "c1_availability": {
+      "status": "pass",
+      "summary": "Overall success 99.4% on 1240 standard quotes. 10 of 10 routes have success at or above 70%. 10 routes returned at least one quote. Pass bar: \u226585% overall and at least 8 of 10 routes at \u226570%. Falsify bar: overall <50% or fewer than 5 routes ever quote. Minimum sample: 10 complete cycles. Misses were 2 Cloudflare 520, 1 incomplete response, 5 timeout at 50s.",
+      "routes_covered_70": 10,
+      "routes_ever": 10
+    },
+    "c2_price": {
+      "status": "pass",
+      "summary": "Stable median versus Kraken -2.1 bps, n=495. Volatile median -28.1 bps, n=737. Pass bar: stable \u2265 \u221240 bps and volatile \u2265 \u2212100 bps. Falsify bar: stable < \u2212100 bps or volatile < \u2212200 bps. The documented 25 bps unauthenticated fee is inside these medians and is not subtracted.",
+      "stable_median_vs_kraken_bps": "-2.1045",
+      "volatile_median_vs_kraken_bps": "-28.0795",
+      "stable_n": 495,
+      "volatile_n": 737,
+      "stable_median_minus_documented_25bps_estimate": "22.8955",
+      "volatile_median_minus_documented_25bps_estimate": "-3.0795",
+      "estimate_note": "Adding 25 bps is an estimate of the gap after the documented unauthenticated fee. It is not a measured fee line and it is not the official test."
+    },
+    "c3_volume": {
+      "label": "contracting",
+      "summary": "DefiLlama daily bars after dropping a same-day partial bar: 704. Sum of the last 30 UTC daily bars 3797462047.00 USD, prior 30 4835798678.00 USD, growth_30 -0.214719. DefiLlama's own total30d headline on that snapshot is 3797462047.00 USD, which is a different statistic from the sum of calendar bars and is not used for the label. Expanding if growth_30 > 0.10, contracting if < \u22120.10, otherwise flat. This label does not decide the investment claim. Snapshot file: data/raw/defillama/20261114T063031Z.json.",
+      "growth_30": "-0.214719",
+      "last_30_usd": "3797462047.00",
+      "prior_30_usd": "4835798678.00",
+      "bars_used": 704,
+      "dropped_partial_last_bar": false
+    }
+  },
+  "routes": [
+    {
+      "id": "near_usdc_eth",
+      "label": "wNEAR \u2192 USDC (Ethereum)",
+      "family": "volatile",
+      "attempts": 124,
+      "successes": 122,
+      "success_rate": "0.983871",
+      "median_vs_kraken_bps": "-93.5267",
+      "median_vs_okx_bps": "-93.4825",
+      "median_vs_coinbase_bps": null,
+      "median_usd_mark_bps": "-78.1114",
+      "kraken_n": 122,
+      "sizes": [
+        {
+          "size_label": "10 wNEAR",
+          "median_vs_kraken_bps": "-109.9898",
+          "n": 62
+        },
+        {
+          "size_label": "100 wNEAR",
+          "median_vs_kraken_bps": "-32.0086",
+          "n": 60
+        }
+      ]
+    },
+    {
+      "id": "usdc_eth_near",
+      "label": "USDC (Ethereum) \u2192 wNEAR",
+      "family": "volatile",
+      "attempts": 124,
+      "successes": 124,
+      "success_rate": "1.000000",
+      "median_vs_kraken_bps": "-30.6519",
+      "median_vs_okx_bps": "-29.3707",
+      "median_vs_coinbase_bps": null,
+      "median_usd_mark_bps": "-22.9323",
+      "kraken_n": 124,
+      "sizes": [
+        {
+          "size_label": "100 USDC",
+          "median_vs_kraken_bps": "-30.5280",
+          "n": 62
+        },
+        {
+          "size_label": "5000 USDC",
+          "median_vs_kraken_bps": "-30.8200",
+          "n": 62
+        }
+      ]
+    },
+    {
+      "id": "usdc_eth_sol",
+      "label": "USDC Ethereum \u2192 Solana",
+      "family": "stable",
+      "attempts": 124,
+      "successes": 124,
+      "success_rate": "1.000000",
+      "median_vs_kraken_bps": "-2.0332",
+      "median_vs_okx_bps": "-2.0332",
+      "median_vs_coinbase_bps": null,
+      "median_usd_mark_bps": "-2.0332",
+      "kraken_n": 124,
+      "sizes": [
+        {
+          "size_label": "100 USDC",
+          "median_vs_kraken_bps": "-2.5045",
+          "n": 62
+        },
+        {
+          "size_label": "10000 USDC",
+          "median_vs_kraken_bps": "-1.8272",
+          "n": 62
+        }
+      ]
+    },
+    {
+      "id": "usdt_eth_tron",
+      "label": "USDT Ethereum \u2192 Tron",
+      "family": "stable",
+      "attempts": 124,
+      "successes": 123,
+      "success_rate": "0.991935",
+      "median_vs_kraken_bps": "-21.1122",
+      "median_vs_okx_bps": "-21.1122",
+      "median_vs_coinbase_bps": "-21.1122",
+      "median_usd_mark_bps": "-21.1122",
+      "kraken_n": 123,
+      "sizes": [
+        {
+          "size_label": "100 USDT",
+          "median_vs_kraken_bps": "-21.2195",
+          "n": 62
+        },
+        {
+          "size_label": "5000 USDT",
+          "median_vs_kraken_bps": "-1.5620",
+          "n": 61
+        }
+      ]
+    },
+    {
+      "id": "eth_sol",
+      "label": "ETH \u2192 SOL",
+      "family": "volatile",
+      "attempts": 124,
+      "successes": 123,
+      "success_rate": "0.991935",
+      "median_vs_kraken_bps": "-25.6093",
+      "median_vs_okx_bps": "-25.4563",
+      "median_vs_coinbase_bps": "-24.8434",
+      "median_usd_mark_bps": "-25.5273",
+      "kraken_n": 123,
+      "sizes": [
+        {
+          "size_label": "0.05 ETH",
+          "median_vs_kraken_bps": "-26.4286",
+          "n": 61
+        },
+        {
+          "size_label": "0.5 ETH",
+          "median_vs_kraken_bps": "-24.9083",
+          "n": 62
+        }
+      ]
+    },
+    {
+      "id": "btc_eth",
+      "label": "BTC \u2192 ETH",
+      "family": "volatile",
+      "attempts": 124,
+      "successes": 122,
+      "success_rate": "0.983871",
+      "median_vs_kraken_bps": "-26.5418",
+      "median_vs_okx_bps": "-26.0344",
+      "median_vs_coinbase_bps": "-26.4242",
+      "median_usd_mark_bps": "-26.6950",
+      "kraken_n": 122,
+      "sizes": [
+        {
+          "size_label": "0.002 BTC",
+          "median_vs_kraken_bps": "-26.1183",
+          "n": 61
+        },
+        {
+          "size_label": "0.02 BTC",
+          "median_vs_kraken_bps": "-27.0333",
+          "n": 61
+        }
+      ]
+    },
+    {
+      "id": "sol_near",
+      "label": "SOL \u2192 wNEAR",
+      "family": "volatile",
+      "attempts": 124,
+      "successes": 123,
+      "success_rate": "0.991935",
+      "median_vs_kraken_bps": "-31.7632",
+      "median_vs_okx_bps": "-31.0395",
+      "median_vs_coinbase_bps": "-32.5109",
+      "median_usd_mark_bps": "-30.4200",
+      "kraken_n": 123,
+      "sizes": [
+        {
+          "size_label": "1 SOL",
+          "median_vs_kraken_bps": "-31.5804",
+          "n": 61
+        },
+        {
+          "size_label": "20 SOL",
+          "median_vs_kraken_bps": "-32.3979",
+          "n": 62
+        }
+      ]
+    },
+    {
+      "id": "usdc_eth_base",
+      "label": "USDC Ethereum \u2192 Base",
+      "family": "stable",
+      "attempts": 124,
+      "successes": 124,
+      "success_rate": "1.000000",
+      "median_vs_kraken_bps": "-1.2158",
+      "median_vs_okx_bps": "-1.2158",
+      "median_vs_coinbase_bps": null,
+      "median_usd_mark_bps": "-1.2158",
+      "kraken_n": 124,
+      "sizes": [
+        {
+          "size_label": "100 USDC",
+          "median_vs_kraken_bps": "-1.1746",
+          "n": 62
+        },
+        {
+          "size_label": "10000 USDC",
+          "median_vs_kraken_bps": "-1.2629",
+          "n": 62
+        }
+      ]
+    },
+    {
+      "id": "eth_arb_eth",
+      "label": "ETH Arbitrum \u2192 Ethereum",
+      "family": "stable",
+      "attempts": 124,
+      "successes": 124,
+      "success_rate": "1.000000",
+      "median_vs_kraken_bps": "-5.8699",
+      "median_vs_okx_bps": "-5.8699",
+      "median_vs_coinbase_bps": "-5.8699",
+      "median_usd_mark_bps": "-5.8699",
+      "kraken_n": 124,
+      "sizes": [
+        {
+          "size_label": "0.05 ETH",
+          "median_vs_kraken_bps": "-9.0199",
+          "n": 62
+        },
+        {
+          "size_label": "0.5 ETH",
+          "median_vs_kraken_bps": "-2.7199",
+          "n": 62
+        }
+      ]
+    },
+    {
+      "id": "near_sol",
+      "label": "wNEAR \u2192 SOL",
+      "family": "volatile",
+      "attempts": 124,
+      "successes": 123,
+      "success_rate": "0.991935",
+      "median_vs_kraken_bps": "-21.7851",
+      "median_vs_okx_bps": "-23.4049",
+      "median_vs_coinbase_bps": "-21.7685",
+      "median_usd_mark_bps": "-28.0684",
+      "kraken_n": 123,
+      "sizes": [
+        {
+          "size_label": "10 wNEAR",
+          "median_vs_kraken_bps": "-23.1347",
+          "n": 61
+        },
+        {
+          "size_label": "100 wNEAR",
+          "median_vs_kraken_bps": "-20.4417",
+          "n": 62
+        }
+      ]
+    }
+  ],
+  "source_disagreement": {
+    "defillama_total24h": "168740766.00",
+    "defillama_total7d": "979720637.00",
+    "defillama_total30d": "3797462047.00",
+    "defillama_total_all_time": "37782828302.00",
+    "explorer_last_day": "168740766.00",
+    "explorer_last_7d": "979720637.00",
+    "explorer_last_30d": "3797462046.00",
+    "explorer_all_time": "38720987168.00",
+    "explorer_fetched_at": "2026-11-14T05:23:52.965Z",
+    "day_difference_usd": "0.00",
+    "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/near-intents"
+  },
+  "hashes": {
+    "method_sha256": "df72528bd4b8731ca52e9be1fe9ade74fc2978bd8270f4f273b680f7c57b8cfb",
+    "dataset_sha256": "a3d5d294d2575d6b9075f9de2e77c1597c46eccfb6abf029c1a389f02cf6eb2d",
+    "dataset_files": 26
+  },
+  "anchor": {
+    "network": "testnet",
+    "account_id": "intents-thesis-d163.testnet",
+    "public_key": "ed25519:6EC2Jy6cXCycW9Lx5th2uyY134wH3HmbTLYnb3hB1HaW",
+    "create_account_tx": "98UeKtYQFoava6rMUKbK9KGAJWZbJj9ynst46FP9SsFz",
+    "create_account_explorer": "https://explorer.testnet.near.org/transactions/98UeKtYQFoava6rMUKbK9KGAJWZbJj9ynst46FP9SsFz",
+    "deploy_tx": "5efuoH6Qz7pct4HVBozYEk5bpVq6YuTXU18Agi6rFDPs",
+    "deploy_explorer": "https://explorer.testnet.near.org/transactions/5efuoH6Qz7pct4HVBozYEk5bpVq6YuTXU18Agi6rFDPs",
+    "wasm_sha256": "0cf7cba4d3d9df3722985a6af7084d43ad60138ebc0f2b2385ab78e7bedbce26",
+    "near_code_hash": "sd3YsBmsDytbgT1Wsyy5yf6yJDasu7RefCWFA5cH3sT",
+    "anchors": [
+      {
+        "snapshot_id": "method-v1",
+        "label": "method manifest",
+        "sha256_hex": "df72528bd4b8731ca52e9be1fe9ade74fc2978bd8270f4f273b680f7c57b8cfb",
+        "byte_length": 286,
+        "tx": "8LMEu3g9MpxDhBoZnJeH2Crkh7GEda7G5xtyJrnYmNPX",
+        "explorer": "https://explorer.testnet.near.org/transactions/8LMEu3g9MpxDhBoZnJeH2Crkh7GEda7G5xtyJrnYmNPX",
+        "anchored_at_ms": 1794626563492,
+        "read_back_sha256_hex": "df72528bd4b8731ca52e9be1fe9ade74fc2978bd8270f4f273b680f7c57b8cfb"
+      },
+      {
+        "snapshot_id": "dataset-20261114T063024Z",
+        "label": "dataset manifest",
+        "sha256_hex": "a3d5d294d2575d6b9075f9de2e77c1597c46eccfb6abf029c1a389f02cf6eb2d",
+        "byte_length": 2845,
+        "tx": "2fKHAWgThhs2QaUit8SD5QbuqZubHC9zM3buomuthQ8L",
+        "explorer": "https://explorer.testnet.near.org/transactions/2fKHAWgThhs2QaUit8SD5QbuqZubHC9zM3buomuthQ8L",
+        "anchored_at_ms": 1794637888353,
+        "read_back_sha256_hex": "a3d5d294d2575d6b9075f9de2e77c1597c46eccfb6abf029c1a389f02cf6eb2d"
+      }
+    ]
+  }
+}

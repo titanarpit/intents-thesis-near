@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-label="Quote success rate by cycle">
+<rect width="760" height="380" fill="#f3efe7"/>
+<text x="24" y="28" font-family="Georgia, serif" font-size="18" fill="#1c1916">Quote success rate by cycle</text>
+<line x1="64" y1="332.0" x2="742" y2="332.0" stroke="#e4ddd2"/>
+<text x="56" y="336.0" text-anchor="end" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">0.84</text>
+<line x1="64" y1="236.7" x2="742" y2="236.7" stroke="#e4ddd2"/>
+<text x="56" y="240.7" text-anchor="end" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">0.90</text>
+<line x1="64" y1="141.3" x2="742" y2="141.3" stroke="#e4ddd2"/>
+<text x="56" y="145.3" text-anchor="end" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">0.95</text>
+<line x1="64" y1="46.0" x2="742" y2="46.0" stroke="#e4ddd2"/>
+<text x="56" y="50.0" text-anchor="end" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">1.01</text>
+<text x="16" y="58" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c" transform="rotate(-90 16 58)">success rate</text>
+<text x="64.0" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">03:17</text>
+<text x="175.1" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">03:47</text>
+<text x="286.3" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">04:17</text>
+<text x="397.4" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">04:47</text>
+<text x="508.6" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">05:26</text>
+<text x="619.7" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">05:57</text>
+<text x="730.9" y="364" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#5c564c">06:27</text>
+<path d="M64.0,65.7 L75.1,65.7 L86.2,65.7 L97.3,65.7 L108.5,65.7 L119.6,65.7 L130.7,65.7 L141.8,65.7 L152.9,65.7 L164.0,65.7 L175.1,65.7 L186.3,65.7 L197.4,65.7 L208.5,65.7 L219.6,65.7 L230.7,65.7 L241.8,65.7 L253.0,65.7 L264.1,65.7 L275.2,65.7 L286.3,65.7 L297.4,65.7 L308.5,65.7 L319.6,65.7 L330.8,65.7 L341.9,65.7 L353.0,65.7 L364.1,65.7 L375.2,65.7 L386.3,65.7 L397.4,65.7 L408.6,65.7 L419.7,65.7 L430.8,65.7 L441.9,65.7 L453.0,65.7 L464.1,312.3 L475.2,230.1 L486.4,147.9 L497.5,230.1 L508.6,65.7 L519.7,65.7 L530.8,65.7 L541.9,65.7 L553.0,65.7 L564.2,65.7 L575.3,65.7 L586.4,65.7 L597.5,65.7 L608.6,65.7 L619.7,65.7 L630.9,65.7 L642.0,65.7 L653.1,65.7 L664.2,65.7 L675.3,65.7 L686.4,65.7 L697.5,65.7 L708.7,65.7 L719.8,65.7 L730.9,65.7 L742.0,65.7" fill="none" stroke="#0f5f5a" stroke-width="2"/>
+<rect x="64" y="340" width="10" height="10" fill="#0f5f5a"/>
+<text x="78" y="349" font-family="ui-sans-serif, sans-serif" font-size="11" fill="#1c1916">standard basket</text>
+</svg>
